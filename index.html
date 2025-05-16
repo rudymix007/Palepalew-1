@@ -2,12 +2,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>PALE PALE'W - Sèvis</title>
+    <title>PALE PALE'W - Sèvis Konplè</title>
     <meta charset="UTF-8">
     <style>
         body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; text-align: center; }
         h1 { margin-bottom: 30px; }
-        .button-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; max-width: 800px; margin: auto; }
+        .button-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; max-width: 900px; margin: auto; }
         .btn {
             background-color: #0066cc;
             color: white;
@@ -20,25 +20,25 @@
             cursor: pointer;
             transition: background 0.3s ease;
         }
-        .btn:hover {
-            background-color: #004a99;
-        }
+        .btn:hover { background-color: #004a99; }
+        .section { margin-top: 50px; padding: 20px; background: #fff; border-radius: 10px; max-width: 800px; margin-left: auto; margin-right: auto; text-align: left; }
+        input, select, textarea { width: 100%; padding: 10px; margin-top: 10px; }
     </style>
 </head>
 <body>
-    <h1>PALE PALE'W - Sèvis Disponib</h1>
+    <h1>PALE PALE'W - Sèvis Konplè</h1>
     <div class="button-grid">
         <a class="btn" href="#voye-minit">Voye Minit</a>
         <a class="btn" href="#voye-lajan">Voye Lajan</a>
         <a class="btn" href="#tradiksyon">Tradiksyon Dokiman</a>
         <a class="btn" href="#achte-pou-mwen">Achte Pou Mwen</a>
-        <a class="btn" href="https://paypal.me" target="_blank">Peye ak PayPal</a>
-        <a class="btn" href="https://moncash.app" target="_blank">Peye ak MonCash</a>
-        <a class="btn" href="https://stripe.com/pay" target="_blank">Peye ak Stripe</a>
-        <a class="btn" href="https://sendwave.com" target="_blank">Sendwave</a>
+        <a class="btn" href="#payment">Peman (Stripe / MonCash)</a>
+        <a class="btn" href="#contact">Kontakte nou</a>
+        <a class="btn" href="#about">Sou nou</a>
+        <a class="btn" href="#faq">FAQ</a>
     </div>
 
-    <div id="voye-minit" style="margin-top:50px;">
+    <div class="section" id="voye-minit">
         <h2>Voye Minit</h2>
         <input type="text" id="number" placeholder="509XXXXXXXX">
         <select id="amount">
@@ -47,6 +47,34 @@
         </select>
         <button onclick="sendTopup()">Voye Kounye a</button>
         <p id="msg"></p>
+    </div>
+
+    <div class="section" id="payment">
+        <h2>Peman Sekirize</h2>
+        <p><strong>Stripe:</strong> <a href="https://buy.stripe.com" target="_blank">Peye ak kat kredi/debit</a></p>
+        <p><strong>MonCash:</strong> <a href="https://moncash.app" target="_blank">Peye ak MonCash</a></p>
+    </div>
+
+    <div class="section" id="contact">
+        <h2>Kontakte Nou</h2>
+        <form>
+            <input type="text" placeholder="Non ou">
+            <input type="email" placeholder="Imèl ou">
+            <textarea placeholder="Ekri mesaj ou..."></textarea>
+            <button type="submit">Voye</button>
+        </form>
+    </div>
+
+    <div class="section" id="about">
+        <h2>Kisa PALE PALE'W ye?</h2>
+        <p>PALE PALE’W se yon platfòm dijital pou voye minit, transfè lajan, tradiksyon ak achte sou entènèt. Nou kreye li pou fasilite kominote Ayisyen an — toupatou nan mond lan.</p>
+    </div>
+
+    <div class="section" id="faq">
+        <h2>Kesyon Poze Souvan (FAQ)</h2>
+        <p><strong>Kijan mwen ka voye minit?</strong><br>Antre nimewo telefòn lan, chwazi kantite, epi klike “Voye Kounye a”.</p>
+        <p><strong>Eske mwen ka itilize MonCash?</strong><br>Wi, klike sou lyen MonCash la nan seksyon peman.</p>
+        <p><strong>Ki jan mwen ka kontakte nou?</strong><br>Ranpli fòm lan oswa voye mesaj sou WhatsApp.</p>
     </div>
 
     <script>
