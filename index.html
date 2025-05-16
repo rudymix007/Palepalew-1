@@ -4,12 +4,25 @@
 <head>
     <title>PALE PALE'W - Sit Konplè</title>
     <meta charset="UTF-8">
+    <link rel="icon" href="logo.png" type="image/png">
     <style>
-        body { font-family: Arial; background: #f4f4f4; padding: 20px; text-align: center; }
-        h1 { margin-bottom: 30px; }
+        body { font-family: Arial; background: #f4f4f4; padding: 0; margin: 0; }
+        header {
+            background: #0066cc;
+            color: white;
+            padding: 10px 20px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+        }
+        header img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        h1 { text-align: center; margin-top: 20px; }
         .button-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px; max-width: 900px; margin: auto;
+            gap: 15px; max-width: 900px; margin: 30px auto;
         }
         .btn {
             background-color: #0066cc; color: white; padding: 15px; border: none;
@@ -27,7 +40,12 @@
     </style>
 </head>
 <body>
-    <h1>PALE PALE'W - Sit Konplè</h1>
+    <header>
+        <img src="logo.png" alt="Logo">
+        <h2>PALE PALE'W</h2>
+    </header>
+
+    <h1>Byenvini sou platfòm PALE PALE’W</h1>
 
     <div class="button-grid">
         <a class="btn" href="#voye-minit">Voye Minit</a>
@@ -50,49 +68,6 @@
         </select>
         <button onclick="sendTopup()">Voye Kounye a</button>
         <p id="msg"></p>
-    </div>
-
-    <div class="section" id="payment">
-        <h2>Peman Sekirize</h2>
-        <p><strong>Stripe:</strong> <a href="https://buy.stripe.com" target="_blank">Peye ak kat kredi/debit</a></p>
-        <p><strong>MonCash:</strong> <a href="https://moncash.app" target="_blank">Peye ak MonCash</a></p>
-    </div>
-
-    <div class="section" id="notifikasyon">
-        <h2>Voye Notifikasyon Imèl</h2>
-        <form action="https://formsubmit.co/palepalew@gmail.com" method="POST">
-            <input type="text" name="non" placeholder="Non kliyan an" required>
-            <input type="text" name="telefòn" placeholder="Nimewo telefòn" required>
-            <textarea name="mesaj" placeholder="Ki sèvis yo itilize?" required></textarea>
-            <input type="hidden" name="_subject" value="Nouvo Sèvis sou Pale Pale'w">
-            <input type="hidden" name="_captcha" value="false">
-            <button type="submit">Voye Imèl</button>
-        </form>
-        <p style="margin-top:20px;"><a href="https://wa.me/50937123456?text=Nouvo+lod+sou+PALE+PALEW+✅" target="_blank">
-            <button style="width:auto;">Voye sou WhatsApp</button>
-        </a></p>
-    </div>
-
-    <div class="section" id="contact">
-        <h2>Kontakte Nou</h2>
-        <form>
-            <input type="text" placeholder="Non ou">
-            <input type="email" placeholder="Imèl ou">
-            <textarea placeholder="Ekri mesaj ou..."></textarea>
-            <button type="submit">Voye</button>
-        </form>
-    </div>
-
-    <div class="section" id="about">
-        <h2>Sou Pale Pale’w</h2>
-        <p>PALE PALE’W se yon platfòm dijital pou voye minit, transfè lajan, achte pou ou, tradiksyon ak peman. Li fèt pou ede kominote Ayisyen an fasilite sèvis chak jou.</p>
-    </div>
-
-    <div class="section" id="faq">
-        <h2>Kesyon Poze Souvan</h2>
-        <p><strong>Kijan mwen ka voye minit?</strong><br>Antre nimewo telefòn lan, chwazi kantite, epi klike “Voye Kounye a”.</p>
-        <p><strong>Eske mwen ka itilize MonCash?</strong><br>Wi, ou ka peye ak MonCash dirèk sou sit la.</p>
-        <p><strong>Kijan mwen ka kontakte nou?</strong><br>Ranpli fòm lan oswa itilize WhatsApp.</p>
     </div>
 
     <script>
