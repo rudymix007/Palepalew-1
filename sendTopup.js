@@ -3,7 +3,8 @@ export default async function handler(req, res) {
     const { number, amount } = req.body;
     const fetch = (await import('node-fetch')).default;
 
-    const token = "V604JbV7A6JSDMGTEYj4Un1t79Wqyu6c"; // Replace with your real token
+    const token = process.env.RELOADLY_TOKEN;
+"; // Replace with your real token
 
     const response = await fetch("https://topups.reloadly.com/topups", {
         method: "POST",
