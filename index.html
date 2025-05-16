@@ -2,86 +2,111 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>PALE PALE'W - Sit Konplè</title>
+    <title>PALE PALE'W - Platfòm Konplè</title>
     <meta charset="UTF-8">
-    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="icon" type="image/png" href="logo.png">
     <style>
-        body { font-family: Arial; background: #f4f4f4; padding: 0; margin: 0; }
+        body { font-family: Arial, sans-serif; margin: 0; background: #f4f4f4; }
         header {
-            background: #0066cc;
-            color: white;
-            padding: 10px 20px;
-            text-align: left;
-            display: flex;
-            align-items: center;
+            background: #0066cc; color: white; display: flex;
+            align-items: center; padding: 10px 20px;
         }
-        header img {
-            height: 50px;
-            margin-right: 15px;
-        }
-        h1 { text-align: center; margin-top: 20px; }
+        header img { height: 60px; margin-right: 15px; }
+        header h1 { margin: 0; font-size: 24px; }
         .button-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px; max-width: 900px; margin: 30px auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px; max-width: 960px; margin: 30px auto;
         }
         .btn {
-            background-color: #0066cc; color: white; padding: 15px; border: none;
-            border-radius: 8px; font-size: 16px; text-decoration: none;
-            display: inline-block; cursor: pointer; transition: background 0.3s ease;
+            background: #0066cc; color: white; padding: 15px; border: none;
+            font-size: 16px; border-radius: 8px; text-decoration: none;
+            cursor: pointer; display: block;
         }
-        .btn:hover { background-color: #004a99; }
+        .btn:hover { background: #004a99; }
         .section {
-            margin-top: 50px; padding: 20px; background: white; border-radius: 10px;
-            max-width: 800px; margin-left: auto; margin-right: auto; text-align: left;
+            max-width: 900px; background: white; margin: 30px auto;
+            padding: 20px; border-radius: 10px;
         }
         input, select, textarea, button {
-            width: 100%; padding: 10px; margin-top: 10px; border-radius: 6px; border: 1px solid #ccc;
+            width: 100%; padding: 10px; margin-top: 10px;
+            border-radius: 6px; border: 1px solid #ccc;
         }
     </style>
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="Logo">
-        <h2>PALE PALE'W</h2>
-    </header>
 
-    <h1>Byenvini sou platfòm PALE PALE’W</h1>
+<header>
+    <img src="logo.png" alt="PALE PALE'W Logo">
+    <h1>PALE PALE'W</h1>
+</header>
 
-    <div class="button-grid">
-        <a class="btn" href="#voye-minit">Voye Minit</a>
-        <a class="btn" href="#voye-lajan">Voye Lajan</a>
-        <a class="btn" href="#tradiksyon">Tradiksyon</a>
-        <a class="btn" href="#achte-pou-mwen">Achte Pou Mwen</a>
-        <a class="btn" href="#payment">Peman</a>
-        <a class="btn" href="#notifikasyon">Notifikasyon</a>
-        <a class="btn" href="#contact">Kontakte nou</a>
-        <a class="btn" href="#about">Sou nou</a>
-        <a class="btn" href="#faq">FAQ</a>
-    </div>
+<div class="button-grid">
+    <a class="btn" href="#voye-minit">Voye Minit</a>
+    <a class="btn" href="#voye-lajan">Voye Lajan</a>
+    <a class="btn" href="#tradiksyon">Tradiksyon</a>
+    <a class="btn" href="#achte">Achte pou mwen</a>
+    <a class="btn" href="#peman">Peman (Stripe/MonCash)</a>
+    <a class="btn" href="#notifikasyon">Notifikasyon</a>
+    <a class="btn" href="#contact">Kontakte Nou</a>
+    <a class="btn" href="#faq">FAQ</a>
+</div>
 
-    <div class="section" id="voye-minit">
-        <h2>Voye Minit</h2>
-        <input type="text" id="number" placeholder="509XXXXXXXX">
-        <select id="amount">
-            <option value="5">Minit $5</option>
-            <option value="10">Minit $10</option>
-        </select>
-        <button onclick="sendTopup()">Voye Kounye a</button>
-        <p id="msg"></p>
-    </div>
+<div id="voye-minit" class="section">
+    <h2>Voye Minit</h2>
+    <input type="text" placeholder="509XXXXXXXX">
+    <select><option>$5</option><option>$10</option></select>
+    <button>Voye Kounye a</button>
+</div>
 
-    <script>
-    async function sendTopup() {
-        const number = document.getElementById('number').value;
-        const amount = document.getElementById('amount').value;
-        const res = await fetch('/api/sendTopup', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ number, amount })
-        });
-        const data = await res.json();
-        document.getElementById('msg').innerText = data.message || 'Repons resevwa.';
-    }
-    </script>
+<div id="voye-lajan" class="section">
+    <h2>Voye Lajan</h2>
+    <p>Nouvo sèvis voye lajan atravè NatCash, MonCash, Zelle, Sendwave.</p>
+</div>
+
+<div id="tradiksyon" class="section">
+    <h2>Tradiksyon Dokiman</h2>
+    <p>USCIS, Franch/Anglè, ofisyèl ak sètifye.</p>
+</div>
+
+<div id="achte" class="section">
+    <h2>Achte pou mwen</h2>
+    <p>Amazon, Shein, Temu, eBay — nou achte pou ou, ou peye ak MonCash oswa NatCash.</p>
+</div>
+
+<div id="peman" class="section">
+    <h2>Peman</h2>
+    <p><a href="https://buy.stripe.com" target="_blank">Peye ak Stripe</a></p>
+    <p><a href="https://moncash.app" target="_blank">Peye ak MonCash</a></p>
+</div>
+
+<div id="notifikasyon" class="section">
+    <h2>Notifikasyon</h2>
+    <form action="https://formsubmit.co/palepalew@gmail.com" method="POST">
+        <input type="text" name="non" placeholder="Non">
+        <input type="text" name="telefòn" placeholder="Nimewo">
+        <textarea name="mesaj" placeholder="Mesaj"></textarea>
+        <button type="submit">Voye Imèl</button>
+    </form>
+    <a href="https://wa.me/50937123456?text=Nouvo+lod+sou+PALE+PALEW" target="_blank">
+        <button style="margin-top:10px;">Voye sou WhatsApp</button>
+    </a>
+</div>
+
+<div id="contact" class="section">
+    <h2>Kontakte Nou</h2>
+    <form>
+        <input type="text" placeholder="Non ou">
+        <input type="email" placeholder="Imèl ou">
+        <textarea placeholder="Ekri mesaj ou..."></textarea>
+        <button type="submit">Voye</button>
+    </form>
+</div>
+
+<div id="faq" class="section">
+    <h2>FAQ</h2>
+    <p><strong>Kijan mwen ka voye minit?</strong> Chwazi kantite epi klike “Voye Kounye a”.</p>
+    <p><strong>Eske mwen ka peye ak MonCash?</strong> Wi, sou lyen ofisyèl la.</p>
+</div>
+
 </body>
 </html>
