@@ -1,1 +1,66 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PALE PALE'W - Sèvis</title>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; text-align: center; }
+        h1 { margin-bottom: 30px; }
+        .button-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; max-width: 800px; margin: auto; }
+        .btn {
+            background-color: #0066cc;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #004a99;
+        }
+    </style>
+</head>
+<body>
+    <h1>PALE PALE'W - Sèvis Disponib</h1>
+    <div class="button-grid">
+        <a class="btn" href="#voye-minit">Voye Minit</a>
+        <a class="btn" href="#voye-lajan">Voye Lajan</a>
+        <a class="btn" href="#tradiksyon">Tradiksyon Dokiman</a>
+        <a class="btn" href="#achte-pou-mwen">Achte Pou Mwen</a>
+        <a class="btn" href="https://paypal.me" target="_blank">Peye ak PayPal</a>
+        <a class="btn" href="https://moncash.app" target="_blank">Peye ak MonCash</a>
+        <a class="btn" href="https://stripe.com/pay" target="_blank">Peye ak Stripe</a>
+        <a class="btn" href="https://sendwave.com" target="_blank">Sendwave</a>
+    </div>
+
+    <div id="voye-minit" style="margin-top:50px;">
+        <h2>Voye Minit</h2>
+        <input type="text" id="number" placeholder="509XXXXXXXX">
+        <select id="amount">
+            <option value="5">Minit $5</option>
+            <option value="10">Minit $10</option>
+        </select>
+        <button onclick="sendTopup()">Voye Kounye a</button>
+        <p id="msg"></p>
+    </div>
+
+    <script>
+    async function sendTopup() {
+        const number = document.getElementById('number').value;
+        const amount = document.getElementById('amount').value;
+        const res = await fetch('/api/sendTopup', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ number, amount })
+        });
+        const data = await res.json();
+        document.getElementById('msg').innerText = data.message || 'Repons resevwa.';
+    }
+    </script>
+</body>
+</html>
